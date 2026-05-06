@@ -1,0 +1,21 @@
+# Sensitive — never commit these
+config.json
+resume/
+
+# Logs (optional: remove the ! lines if you want to track logs in git)
+logs/
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
