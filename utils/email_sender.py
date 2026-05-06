@@ -28,16 +28,13 @@ class EmailSender:
         self._count  = 0
         self._connect()
 
-    # ── Context manager support ───────────────────────────────────────────────
 
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self._close()
-        return False  # Do not suppress exceptions
-
-    # ── SMTP connection ───────────────────────────────────────────────────────
+        return False 
 
     def _connect(self):
         self._smtp = smtplib.SMTP_SSL("smtp.gmail.com", 465)
@@ -51,7 +48,6 @@ class EmailSender:
                 pass
             self._smtp = None
 
-    # ── Send ──────────────────────────────────────────────────────────────────
 
     def send(self, contact: dict, resume_path: str) -> tuple:
         """
@@ -81,7 +77,6 @@ class EmailSender:
         msg = self._build_message(contact, resume_path)
         self._smtp.sendmail(self.sender, contact["email"], msg.as_string())
 
-    # ── Message builder ───────────────────────────────────────────────────────
 
     def _build_message(self, contact: dict, resume_path: str) -> MIMEMultipart:
         cfg = self.config

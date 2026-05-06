@@ -5,10 +5,7 @@ VERSION = "1.0.0"
 
 def print_banner():
     print()
-    print("  ╔══════════════════════════════════════════════════════╗")
     print("  ║         Cold Email Bot  —  HR Outreach Tool          ║")
-    print(f"  ║                     v{VERSION}                           ║")
-    print("  ╚══════════════════════════════════════════════════════╝")
     print()
 
 

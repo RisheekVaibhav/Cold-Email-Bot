@@ -18,7 +18,6 @@ def main():
         print("      Place your PDF resume there and try again.\n")
         sys.exit(1)
 
-    # Collect HR contacts interactively 
     contacts = collect_hr_contacts(max_contacts=5)
     if not contacts:
         print("\n  No contacts entered. Exiting.\n")

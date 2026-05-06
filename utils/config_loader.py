@@ -23,7 +23,6 @@ def load_config(path: str) -> dict:
         print(f"\n  [!] config.json has invalid JSON: {e}\n")
         sys.exit(1)
 
-    # Strip internal/comment keys (any key starting with "_")
     config = {k: v for k, v in raw.items() if not k.startswith("_")}
 
     missing = [k for k in REQUIRED_KEYS if not config.get(k)]
